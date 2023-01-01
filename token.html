@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Token</title>
+</head>
+<body>
+    <form id="from" method="post"
+    action="https://api.instagram.com/oauth/access_token/">
+        <input type="text" name="client_id" value="3449940251998373">
+        <input type="text" name="client_secret" value="9f62c82ffa0d55eac73d506417365b06">
+        <input type="text" name="grant_type" value="authorization_code">
+        <input type="text" name="redirect_uri" value="https://dipbhowmick.github.io/msgme/token.html">
+        <input type="text" id="code" name="code">
+    </form>
+    <script>
+        var code = new URLSearchParams(window.location.search).get("code")
+        if(code){
+            if(code.endsWith("#_")) code = code.split("#_")[0];
+            document.getElementById("code").value = code;
+            document.getElementById("form").submit();
+        }
+        else{
+            console.log("No Code Found!");
+        }
+    </script>
+</body>
+</html>
