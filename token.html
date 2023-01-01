@@ -13,7 +13,7 @@
         <input type="text" id="code" name="code">
     </form>
     <script>
-        document.onload = () => {
+        document.body.onload = () => {
             var code = new URLSearchParams(window.location.search).get("code");
             if(code){
                 if(code.endsWith("#_")) code = code.split("#_")[0];
