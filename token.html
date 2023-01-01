@@ -13,14 +13,17 @@
         <input type="text" id="code" name="code">
     </form>
     <script>
-        var code = new URLSearchParams(window.location.search).get("code")
-        if(code){
-            if(code.endsWith("#_")) code = code.split("#_")[0];
-            document.getElementById("code").value = code;
-            document.getElementById("form").submit();
-        }
-        else{
-            console.log("No Code Found!");
+        document.onload = () => {
+            var code = new URLSearchParams(window.location.search).get("code");
+            if(code){
+                android.log(code);
+                if(code.endsWith("#_")) code = code.split("#_")[0];
+                document.getElementById("code").value = code;
+                document.getElementById("form").submit();
+            }
+            else{
+                android.log("No Code Found!");
+            }
         }
     </script>
 </body>
