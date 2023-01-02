@@ -12,15 +12,5 @@
         <input type="text" name="redirect_uri" value="https://dipbhowmick.github.io/msgme/token.html">
         <input type="text" id="code" name="code">
     </form>
-    <script>
-        window.addEventListener('load', (e) =>{
-            var code = new URLSearchParams(window.location.search).get("code");
-                if(code){
-                    if(code.endsWith("#_")) code = code.split("#_")[0];
-                    document.getElementById("code").value = code;
-                    document.forms['form'].submit();
-                }
-        });
-    </script>
 </body>
 </html>
